@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Idea interactions", :type => :feature do
 
-  scenario "User creates a new idea" do
+
+  scenario "User creates a new idea", js: true do
 
     visit root_path
 
