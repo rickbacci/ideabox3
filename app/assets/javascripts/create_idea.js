@@ -15,23 +15,30 @@ $( document ).ready(function() {
         }
       },
       dataType: "json",
-      success: function(data) {
-        console.log(data);
+      success: function(response) {
+        if (response.id) {
+          console.log(response);
+          $('#headings').after(generateRow(response));
+          $('#idea-title').val('');
+          $('#idea-body').val('');
+          $("#create-idea-button").blur();
 
-        var markup = generateRow(data);
-
-        $('#headings').after(markup);
-        $('#idea-title').val('');
-        $('#idea-body').val('');
-        $("#create-idea-button").blur();
+          $('.flash').append('<p>Idea has been successfully created.</p>')
+        } else {
+          console.log(response);
+          response.forEach(function(error){
+            $('.flash').append('<p>' + error + '</p>')
+          });
+          $('.flash').append('<p>Idea creation Unsuccessful</p>')
+        }
 
       },
       error: function(xhr) {
-        console.log(xhr.responseText)
+        console.log('error in create idea')
+        console.log(xhr.responseText);
       }
-    }).then(function() {
-      console.log('idea created.');
-    });
+    })
+
   });
 
 });

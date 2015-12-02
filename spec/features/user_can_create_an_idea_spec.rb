@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Idea interactions", :type => :feature do
+RSpec.feature "Idea creation", :type => :feature do
 
 
   scenario "User creates a new idea", js: true do
@@ -14,6 +14,7 @@ RSpec.feature "Idea interactions", :type => :feature do
 
     expect(page).to have_content('New Idea')
     expect(page).to have_content('New idea body')
+    expect(page).to_not have_content('0')
   end
 
 

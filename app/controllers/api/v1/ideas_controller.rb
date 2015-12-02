@@ -6,7 +6,14 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def create
-    respond_with Idea.create(idea_params), location: nil
+    idea = Idea.new(idea_params);
+    if idea.save
+      respond_with idea, location: api_v1_ideas_path
+    else
+      errors = idea.errors.full_messages;
+      respond_with  errors, location: root_path
+    end
+
   end
 
   def destroy
@@ -17,9 +24,8 @@ class Api::V1::IdeasController < ApplicationController
   private
 
   def idea_params
-    params.require(:idea).permit(:title, :body)
+    params.require(:idea).permit(:title, :body, :quality)
   end
-
 end
 
 

@@ -7,6 +7,7 @@ $( document ).ready(function() {
       function buildRow(element) {
         $('#headings').after(generateRow(element));
       }
+
       data.forEach(buildRow);
     },
     error: function(xhr) {

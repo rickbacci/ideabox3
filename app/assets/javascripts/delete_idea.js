@@ -4,24 +4,26 @@ $(document).ready(function() {
 
     var urlString = 'api/v1/ideas/' + event.target.dataset.id;
 
-    var removeRow = {
-      event: event
-    };
+    var removeRow = { event: event };
 
-    $.ajax({
-      type:     'delete',
-      url:      urlString,
-      dataType: 'json',
-      success:  function() {
-        removeRow.event.target.parentElement.parentElement.remove();
-      },
-      error: function(xhr) {
-        console.log(xhr.responseText)
-      }
+    deleteRow(urlString, removeRow);
 
-    });
     return false;
   });
 
 });
 
+function deleteRow(urlString, removeRow) {
+  $.ajax({
+    type:     'delete',
+    url:      urlString,
+    dataType: 'json',
+    success:  function() {
+      removeRow.event.target.parentElement.parentElement.remove();
+    },
+    error: function(xhr) {
+      console.log(xhr.responseText)
+    }
+  });
+
+}
