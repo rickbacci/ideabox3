@@ -3,14 +3,18 @@ require 'rails_helper'
 RSpec.feature "Idea quality", :type => :feature do
 
   scenario "User can decrement quality", js: true do
-    Idea.create!(title: 'New Idea', body: 'New Idea Body')
 
     visit root_path
 
-    expect(page).to have_content('plausible')
+    fill_in 'title', with: 'New Idea'
+    fill_in 'body', with: 'New idea body'
 
-    find('.thumbs-down').click
+    click_on "Create Idea"
 
-    expect(page).to_not have_content('swill')
+    expect(page).to have_content('swill')
+
+    find('.thumbs-up').click
+
+    expect(page).to_not have_content('plausible')
   end
 end
