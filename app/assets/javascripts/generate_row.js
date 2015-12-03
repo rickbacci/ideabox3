@@ -2,10 +2,10 @@ function generateRow(data) {
   return  (
         "<tr class='ideas' data-id='" + data.id + "'>"
       +   "<td class='idea-title'>"
-      +     "<textarea class='title well noscrollbars'"
-      +     " data-id='"
-      +      data.id
-      +     "'>"
+      +     "<textarea class='title title-"
+      +     data.id
+      +     " well noscrollbars'"
+      +     " data-id='" + data.id + "'>"
       +     data.title + '</textarea>'
       +   '</td>'
       +   "<td class='idea-body'>"

@@ -3,7 +3,7 @@ function handleUpdateIdeaTitle() {
   $('tbody').on('focusout', 'textarea.title', function(event) {
 
     var id               = event.target.dataset.id;
-    var updatedTitleData = $('.title').val();
+    var updatedTitleData = $('.title-' + id).val();
 
     updateTitle(id, updatedTitleData);
   });
@@ -22,12 +22,9 @@ function updateTitle(id, updatedTitleData) {
       }
     },
     dataType: 'json',
-    success:  function() {
+    success:  function(idea) {
 
-      console.log($('textarea.title').val())
-
-      console.log(event)
-      console.log(this)
+      console.log(idea);
 
     },
     error: function(xhr) {

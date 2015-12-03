@@ -3,7 +3,7 @@ function handleUpdateIdeaBody() {
   $('tbody').on('focusout', 'textarea.body', function(event) {
 
     var id               = event.target.dataset.id;
-    var updatedBodyData = $('.body').val();
+    var updatedBodyData = $('.body-' + id).val();
 
     updateBody(id, updatedBodyData);
   });
