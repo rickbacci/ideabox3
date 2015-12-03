@@ -1,4 +1,4 @@
-$(document).ready(function() {
+function handleDeleteIdea() {
 
   $('tbody').on('click', '.btn-delete', function(event) {
 
@@ -11,7 +11,7 @@ $(document).ready(function() {
     return false;
   });
 
-});
+}
 
 function deleteRow(urlString, removeRow) {
   $.ajax({

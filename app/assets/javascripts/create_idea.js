@@ -1,5 +1,7 @@
-$( document ).ready(function() {
+function handleCreateIdea() {
+
   $('#create-idea-button').on('click', function(event) {
+
     event.preventDefault();
 
     var title = $('#idea-title').val();
@@ -16,30 +18,33 @@ $( document ).ready(function() {
       },
       dataType: "json",
       success: function(response) {
-        if (response.id) {
-          console.log(response);
-          $('#headings').after(generateRow(response));
-          $('#idea-title').val('');
-          $('#idea-body').val('');
-          $("#create-idea-button").blur();
 
-          $('.flash').append('<p>Idea has been successfully created.</p>')
-        } else {
-          console.log(response);
-          response.forEach(function(error){
-            $('.flash').append('<p>' + error + '</p>')
-          });
-          $('.flash').append('<p>Idea creation Unsuccessful</p>')
-        }
+        console.log(response);
+
+        $('#headings').after(generateRow(response));
+
+        $('#idea-title').val('');
+        $('#idea-body').val('');
+        $("#create-idea-button").blur();
+
+        $('.flash').append('<p>Idea has been successfully created.</p>')
+        $('.flash').fadeOut({ duration: 4000 });
 
       },
       error: function(xhr) {
+        $('.flash').append('<p>Idea creation Unsuccessful</p>')
+        $('.flash').fadeOut({ duration: 4000 });
+        $("#create-idea-button").blur();
+
+        // todo: more descriptive errors
+
         console.log('error in create idea')
+
         console.log(xhr.responseText);
       }
-    })
+    });
 
   });
 
-});
+}
 

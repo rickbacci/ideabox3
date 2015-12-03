@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+function getIdeas() {
   $.ajax({
     url: '/api/v1/ideas',
     type: 'GET',
@@ -7,7 +7,6 @@ $( document ).ready(function() {
       function buildRow(element) {
         $('#headings').after(generateRow(element));
       }
-
       data.forEach(buildRow);
     },
     error: function(xhr) {
@@ -16,4 +15,4 @@ $( document ).ready(function() {
 
   });
 
-});
+}

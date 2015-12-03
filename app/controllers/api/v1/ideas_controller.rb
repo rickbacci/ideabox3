@@ -1,31 +1,28 @@
 class Api::V1::IdeasController < ApplicationController
+
   respond_to :html, :json
 
   def index
-    respond_with Idea.order(:created_at), location: nil
+    respond_with Idea.order(:created_at)
   end
 
   def create
-    idea = Idea.new(idea_params);
-    if idea.save
-      respond_with idea, location: api_v1_ideas_path
-    else
-      errors = idea.errors.full_messages;
-      respond_with  errors, location: root_path
-    end
+    respond_with Idea.create(idea_params), location: api_v1_ideas_path;
+  end
 
+  def update
+    respond_with Idea.find(params[:id])
+      .update(quality: params[:idea][:quality]), location: nil
   end
 
   def destroy
     respond_with Idea.find(params[:id]).delete
-    head :no_content
   end
 
   private
 
   def idea_params
-    params.require(:idea).permit(:title, :body, :quality)
+    params.require(:idea).permit(:id, :title, :body, :quality)
   end
 end
-
 
