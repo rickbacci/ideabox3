@@ -8,4 +8,6 @@ $(document).on('ready', function(){
   handleIncrementQuality();
   handleDecrementQuality();
 
+  handleSearch();
+
 });
