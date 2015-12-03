@@ -11,7 +11,7 @@ RSpec.feature "Idea quality", :type => :feature do
 
     click_on "Create Idea"
 
-    expect(page).to have_content('swill')
+    expect(page).to have_content('null')
 
     find('.thumbs-up').click
 

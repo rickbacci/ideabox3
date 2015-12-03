@@ -5,7 +5,7 @@ function generateRow(data) {
       +     '<p>' + data.title + '</p>'
       +   '</td>'
       +   "<td class='idea-body'>"
-      +     '<p>' + data.body + '</p>'
+      +     '<p>' + truncateBody(data) + '</p>'
       +   '</td>'
       +   "<td data-id='" + data.id + "'>"
       +     "<span class='idea-quality-" + data.id + "'>"
