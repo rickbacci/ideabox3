@@ -4,16 +4,15 @@ function handleDecrementQuality() {
     var id             = event.target.dataset.id;
     var urlString      = 'api/v1/ideas/' + id;
     var updateEvent    = { event: event };
-    var currentQuality = event.target.parentElement.textContent;
 
+    var currentQuality = $('.idea-quality-' + id).text();
     var updatedQuality = decrementQuality(currentQuality);
 
-    console.log('Quality down pressed for id: ' + event.target.dataset.id)
+    console.log('Quality down pressed for id: ' + id)
 
     updateRow(urlString, updateEvent, updatedQuality, id);
     $('.thumbs-down').blur();
 
-    // return false;
   });
 }
 

@@ -4,8 +4,8 @@ function handleIncrementQuality() {
     var id             = event.target.dataset.id;
     var urlString      = 'api/v1/ideas/' + id;
     var updateEvent    = { event: event };
-    var currentQuality = event.target.parentElement.textContent;
 
+    var currentQuality = $('.idea-quality-' + id).text();
     var updatedQuality = incrementQuality(currentQuality);
 
     console.log('Quality up pressed for id: ' + id)
@@ -13,7 +13,6 @@ function handleIncrementQuality() {
     updateRow(urlString, updateEvent, updatedQuality, id);
     $('.thumbs-up').blur();
 
-    // return false;
   });
 
 }
