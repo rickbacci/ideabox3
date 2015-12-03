@@ -5,14 +5,18 @@ function generateRow(data) {
       +     '<p>' + data.title + '</p>'
       +   '</td>'
       +   "<td class='idea-body'>"
-      +     '<p>' + truncateBody(data) + '</p>'
+      +     "<p class='well'>" + truncateBody(data) + '</p>'
       +   '</td>'
       +   "<td data-id='" + data.id + "'>"
       +     "<span class='idea-quality-" + data.id + "'>"
       +     data.quality + '</span>'
+      +   '</td>'
+      +   "<td>"
       +     "<button type='button' class='thumbs-down btn btn-default btn-xs glyphicon glyphicon-thumbs-down'"
       +     " data-id='" + data.id + "'>"
       +     "</button>"
+      +   '</td>'
+      +   "<td>"
       +     "<button type='button' class='thumbs-up btn btn-default btn-xs glyphicon glyphicon-thumbs-up'"
       +     " data-id='" + data.id + "'>"
       +     "</button>"
