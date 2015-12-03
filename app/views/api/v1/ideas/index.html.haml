@@ -1,5 +1,7 @@
 .row
   .col-md-8.col-md-offset-2
+    %br
+    %br
     .well
       = bootstrap_form_tag url: '/ideas' do |f|
         = f.text_field :title, id: 'idea-title', placeholder: 'Idea Title', hide_label: true
@@ -8,9 +10,16 @@
 .row
   .col-md-8.col-md-offset-2
     .well
+      %br
+      %input{ placeholder: 'Search', class: 'form-control', id: 'search-bar' }
+      %br
+.row
+  .col-md-8.col-md-offset-2
+    .well
       %table.table.table-hover#ideas-table
         %tr#headings
           %th Title
           %th Body
           %th Quality
-          %th Actions
+          %th{colspan: 3}
+            Actions
