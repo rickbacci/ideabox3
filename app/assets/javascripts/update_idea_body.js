@@ -13,8 +13,9 @@ function handleUpdateIdeaBody() {
   $('tbody').on('focusin', 'textarea', function(event) {
 
     var id               = event.target.dataset.id;
-    var bodyClass = '.body' + id;
+    var bodyClass = '.body-' + id;
     var originalBodyData = $(bodyClass).val();
+
 
     console.log(bodyClass)
     console.log(originalBodyData)
@@ -33,8 +34,13 @@ function handleUpdateIdeaBody() {
       success:  function(event) {
 
         console.log('success on focus in')
-
+        // event.body returns what is in view
         console.log(event.body)
+
+        // need to query db for the origin value
+        // before it was truncated
+
+        // debugger;
 
       },
       error: function(xhr) {
@@ -42,6 +48,7 @@ function handleUpdateIdeaBody() {
       }
 
     });
+    //#.bind(this);
 
     // need to get all the body not truncated.
   });
@@ -51,8 +58,6 @@ function handleUpdateIdeaBody() {
 function updateBody(id, updatedBodyData) {
 
   var urlString = 'api/v1/ideas/' + id;
-
-  // debugger;
 
   $.ajax({
     type: 'put',
@@ -64,9 +69,6 @@ function updateBody(id, updatedBodyData) {
     },
     dataType: 'json',
     success:  function() {
-
-      console.log('success')
-      console.log($('textarea.body').val())
 
       console.log(event)
       console.log(this)
