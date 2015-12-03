@@ -11,8 +11,9 @@ function handleIncrementQuality() {
     console.log('Quality up pressed for id: ' + id)
 
     updateRow(urlString, updateEvent, updatedQuality, id);
+    $('.thumbs-up').blur();
 
-    return false;
+    // return false;
   });
 
 }

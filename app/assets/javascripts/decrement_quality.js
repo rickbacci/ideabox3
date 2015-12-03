@@ -11,6 +11,7 @@ function handleDecrementQuality() {
     console.log('Quality down pressed for id: ' + event.target.dataset.id)
 
     updateRow(urlString, updateEvent, updatedQuality, id);
+    $('.thumbs-down').blur();
 
     // return false;
   });

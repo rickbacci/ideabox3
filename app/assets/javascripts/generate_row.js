@@ -7,7 +7,7 @@ function generateRow(data) {
       +   "<td class='idea-body'>"
       +     '<p>' + data.body + '</p>'
       +   '</td>'
-      +   "<td class='thumbs-down' data-id='" + data.id + "'>"
+      +   "<td data-id='" + data.id + "'>"
       +     "<span class='idea-quality-" + data.id + "'>"
       +     data.quality + '</span>'
       +     "<button type='button' class='thumbs-down btn btn-default btn-xs glyphicon glyphicon-thumbs-down'"

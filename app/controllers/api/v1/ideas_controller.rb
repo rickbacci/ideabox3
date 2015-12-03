@@ -12,7 +12,7 @@ class Api::V1::IdeasController < ApplicationController
 
   def update
     respond_with Idea.find(params[:id])
-      .update(quality: params[:idea][:quality]), location: nil
+      .update(quality: params[:idea][:quality])
   end
 
   def destroy
