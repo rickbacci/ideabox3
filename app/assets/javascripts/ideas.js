@@ -5,6 +5,9 @@ $(document).on('ready', function(){
   handleCreateIdea();
   handleDeleteIdea();
 
+  handleUpdateIdeaTitle();
+  handleUpdateIdeaBody();
+
   handleIncrementQuality();
   handleDecrementQuality();
 

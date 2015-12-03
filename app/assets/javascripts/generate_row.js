@@ -2,10 +2,17 @@ function generateRow(data) {
   return  (
         "<tr class='ideas' data-id='" + data.id + "'>"
       +   "<td class='idea-title'>"
-      +     '<p>' + data.title + '</p>'
+      +     "<textarea class='title well noscrollbars'"
+      +     " data-id='"
+      +      data.id
+      +     "'>"
+      +     data.title + '</textarea>'
       +   '</td>'
       +   "<td class='idea-body'>"
-      +     "<p class='well'>" + truncateBody(data) + '</p>'
+      +     "<textarea class='body body-" + data.id + " well'"
+      +     " data-id='"
+      +      data.id + "'>"
+      +      truncateBody(data) + '</textarea>'
       +   '</td>'
       +   "<td data-id='" + data.id + "'>"
       +     "<span class='idea-quality-" + data.id + "'>"

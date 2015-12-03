@@ -11,8 +11,14 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def update
+    key   = idea_params.keys[0].to_sym
+    value = idea_params[key]
+
+    respond_with Idea.find(params[:id]).update(key => value)
+  end
+
+  def show
     respond_with Idea.find(params[:id])
-      .update(quality: params[:idea][:quality])
   end
 
   def destroy
