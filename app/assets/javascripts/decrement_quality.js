@@ -18,6 +18,11 @@ function handleDecrementQuality() {
 
 function decrementQuality(quality) {
 
+  // Since you return swill twice, maybe it would better
+  // to just have if else statements here
+  // return (quality == 'genius') ? 'plausible' : 'swill';
+  // This is more elegant
+
   switch (quality) {
     case 'genius':
       return 'plausible';

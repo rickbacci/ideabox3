@@ -37,7 +37,8 @@ function handleCreateIdea() {
         $("#create-idea-button").blur();
 
         // todo: more descriptive errors
-
+        // How would you do this? See if you can break up the 
+        // code into manageable semantic chunks
         console.log('error in create idea')
 
         console.log(xhr.responseText);

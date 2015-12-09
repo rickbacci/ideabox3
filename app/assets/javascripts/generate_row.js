@@ -39,3 +39,8 @@ function generateRow(data) {
       + '</tr>'
   );
 }
+
+// I would use ES6 here. You can interpolate strings easier using their syntax. 
+// As well, it seems that you should be using a template langauge, not just strings
+// This is not a scalable way of dealing with HTML stubs, and now you have HTML in your
+// javascript, which fails to separate concerns. Look up Handlebars. See if you can integrate it.
