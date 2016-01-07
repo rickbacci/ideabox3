@@ -32,25 +32,13 @@ function handleUpdateIdeaBody() {
       },
       dataType: 'json',
       success:  function(event) {
-
-        console.log('success on focus in')
-        // event.body returns what is in view
-        console.log(event.body)
-
-        // need to query db for the origin value
-        // before it was truncated
-
-        // debugger;
-
+        //TODO: need to query db for the origin value before it was truncated
       },
       error: function(xhr) {
         console.log(xhr.responseText)
       }
 
     });
-    //#.bind(this);
-
-    // need to get all the body not truncated.
   });
 
 }
@@ -69,10 +57,6 @@ function updateBody(id, updatedBodyData) {
     },
     dataType: 'json',
     success:  function() {
-
-      console.log(event)
-      console.log(this)
-
     },
     error: function(xhr) {
       console.log(xhr.responseText)
