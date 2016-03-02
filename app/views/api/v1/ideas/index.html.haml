@@ -1,21 +1,15 @@
 .row
   .col-md-8.col-md-offset-2
-    %br
-    %br
+    %h2.text-center Idea Box
     .well
       = bootstrap_form_tag url: '/ideas' do |f|
         = f.text_field :title, id: 'idea-title', placeholder: 'Idea Title', hide_label: true
         = f.text_area :body, id: 'idea-body', placeholder: 'Idea Body', hide_label: true
-        = f.submit 'Create Idea', id: 'create-idea-button'
-.row
-  .col-md-8.col-md-offset-2
-    .well
+        = f.submit 'Create Idea', id: 'create-idea-button', class: 'pull-right btn btn-primary'
+        .clearfix
       %br
       %input{ placeholder: 'Search', class: 'form-control', id: 'search-bar' }
       %br
-.row
-  .col-md-8.col-md-offset-2
-    .well
       %table.table.table-hover#ideas-table
         %tr#headings
           %th Title
