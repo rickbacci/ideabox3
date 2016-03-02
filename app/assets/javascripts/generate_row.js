@@ -30,7 +30,7 @@ function generateRow(data) {
       +   '</td>'
       +   "<td class='btn-delete' data-id='"
       +     data.id + "'>"
-      +     "<button class='btn btn-primary btn-xs btn-delete'"
+      +     "<button class='btn btn-danger btn-xs btn-delete'"
       +       "data-id='"
       +       data.id + "'>"
       +       'delete'
